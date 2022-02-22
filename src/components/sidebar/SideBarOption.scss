@@ -1,0 +1,18 @@
+@import '../../global.scss';
+
+.sideBarOption {
+  color: #B2B2B2;
+  cursor: pointer;
+  transition: color 200ms ease-in;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+
+  .icon {
+    padding: 0 10px;
+  }
+
+  &:hover {
+    color: white;
+  }
+}

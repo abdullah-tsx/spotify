@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useContext, useEffect} from 'react';
+import './App.scss';
+import Login from "./components/login/Login";
+import {getAccessToken} from "./utils/spotify";
+import {getUser, setAccessToken} from "./actions";
+import Player from "./components/player/Player";
+import AppContext from "./store/app-context";
 
-function App() {
+const App = () => {
+  const [state, dispatch] = useContext(AppContext);
+
+  useEffect(() => {
+
+    const hash = getAccessToken();
+    const _token = hash.access_token;
+    (async () => {
+      if (_token) {
+        dispatch({type: 'SET_TOKEN', payload: _token});
+        setAccessToken(_token);
+        const user = await getUser()
+        dispatch({type: 'SET_USER', payload: user});
+      }
+    })();
+
+
+  }, [dispatch])
+
+  console.table(state);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+
+      {state.token && <Player/>}
+      {!state.token && <Login/>}
     </div>
   );
-}
+};
 
 export default App;

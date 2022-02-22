@@ -1,0 +1,10 @@
+@import '../../global.scss';
+
+.footer {
+  width: 100vw;
+  background-color: $footerBg;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  padding: 20px;
+}

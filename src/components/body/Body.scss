@@ -1,0 +1,9 @@
+@import '../../global.scss';
+
+.body {
+  flex: 0.85;
+  color: white;
+  padding: 30px;
+  height: 100vh;
+  background: $bodyBg;
+}
