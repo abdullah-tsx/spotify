@@ -1,10 +1,11 @@
 import React from 'react';
 import './Body.scss';
+import Header from "../header/Header";
 
 const Body = () => {
   return (
     <div className="body">
-      <h1>I am body </h1>
+      <Header/>
     </div>
   );
 };

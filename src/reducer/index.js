@@ -1,5 +1,5 @@
 export const initialState = {
-  token: null,
+  token: process.env.REACT_APP_TOKEN, //set to null after dev
   user: null,
   playlists: [],
   playing: false,
@@ -16,6 +16,8 @@ const reducer = (state, action) => {
       return {...state, token: action.payload};
     case 'SET_PLAYLISTS':
       return {...state, playlists: action.payload};
+    case 'RESET_ALL':
+      return initialState;
     default:
       return state;
   }

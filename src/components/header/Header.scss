@@ -1,0 +1,69 @@
+@import '../../global.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  .left {
+    flex: 0.5;
+    min-width: 100px;
+    background-color: white;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    padding: 10px;
+
+    > input {
+      border: none;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .icon {
+      fill: $spotifyDGrey;
+    }
+  }
+
+  .right {
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    background-color: #050505;
+    justify-content: space-between;
+    padding-right: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #282828;
+    }
+
+    .MuiAvatar-root {
+      width: 30px;
+      height: 30px;
+    }
+
+    .name {
+      margin-left: 10px;
+    }
+  }
+}
+
+.MuiMenuItem-root {
+  background-color: $spotifyDGrey !important;
+  color: white !important;
+  font-size: 14px !important;
+
+  &:hover {
+    background-color: $spotifyGrey !important;
+  }
+}
+
+.MuiList-root {
+  padding: 2px !important;
+  background-color: $spotifyDGrey !important;
+}
