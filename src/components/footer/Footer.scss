@@ -2,9 +2,125 @@
 
 .footer {
   width: 100vw;
+  max-width: 100%;
   background-color: $footerBg;
   position: fixed;
   bottom: 0;
-  height: 60px;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 100px;
+  border-top: 0.2px solid $spotifyDGrey;
+
+  .left {
+    flex: 0.2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 300px;
+    padding: 0 20px;
+
+    .albumArt {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+
+    .songInfo {
+      margin: 20px;
+
+      .songName {
+        color: white;
+        margin: 5px 0;
+      }
+
+      .artist {
+        color: $spotifyGrey;
+        font-size: 14px;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .center {
+    flex: 0.6;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .icon {
+        margin: 0 10px;
+
+        &.play {
+          fill: white;
+          transition: all 200ms ease;
+
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    flex: 0.2;
+    height: 100%;
+
+    .container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 200px;
+      justify-content: space-around;
+
+      .MuiSlider-root {
+        width: 100px;
+        color: $spotifyGrey;
+        margin: 0 5px;
+
+        .MuiSlider-rail {
+          color: $spotifyGrey;
+        }
+
+        .MuiSlider-thumb {
+          display: none;
+        }
+
+        &:hover {
+          color: $spotifyGreen;
+
+          .MuiSlider-thumb {
+            display: block;
+            color: white;
+            width: 10px;
+            height: 10px;
+
+            &:hover {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .icon {
+    fill: $spotifyGrey;
+    transition: color 200ms ease;
+
+    &:hover {
+      fill: white;
+    }
+  }
 }

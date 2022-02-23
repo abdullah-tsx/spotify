@@ -4,7 +4,7 @@ import Login from "./components/login/Login";
 import {getAccessToken} from "./utils/spotify";
 import {getUser, setAccessToken} from "./actions";
 import Player from "./components/player/Player";
-import AppContext from "./store/app-context";
+import AppContext from "./context/app-context";
 
 const App = () => {
   const [state, dispatch] = useContext(AppContext);
@@ -24,9 +24,6 @@ const App = () => {
 
 
   }, [dispatch])
-
-  console.table(state);
-
   return (
     <div className="app">
 

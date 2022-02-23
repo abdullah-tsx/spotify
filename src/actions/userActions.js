@@ -7,3 +7,11 @@ export const getUser = async () => {
 
   }
 }
+
+export const getPlaylists = async () => {
+  try {
+    return await spotify.getUserPlaylists();
+  } catch (e) {
+
+  }
+}

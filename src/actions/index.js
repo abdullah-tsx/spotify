@@ -1,2 +1,2 @@
 export * from './setAccessToken';
-export * from './getUser';
+export * from './userActions';

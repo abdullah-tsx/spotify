@@ -1,5 +1,5 @@
 import React, {useReducer} from 'react';
-import AppContext from "../store/app-context";
+import AppContext from "./app-context";
 import reducer, {initialState} from "../reducer";
 
 const AppContextProvider = ({children}) => {
